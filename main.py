@@ -16,23 +16,15 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 # Pedir al usuario que introduzca el mensaje que quiere encriptar o desencriptar y asignar su respuesta a una variable llamada text. Convertir el mensaje a minúscula.
 text = input("Type your message:\n").lower()
 
-# Crear una variable booleana llamada verification_text que indica si el mensaje es válido o no. Inicializarla en False
-verification_text=False
 
-# Crear un bucle while que se repita mientras el mensaje no sea válido
-while verification_text==False:
+ 
+ 
+# Comprobar si el texto son solo digitos
+if text.isdigit():
+   # Si es así, pedir al usuario que introduzca el mensaje de nuevo y asignarlo a la variable text
+   text = input("you enter a incorrect data, please enter your message again: ")
     
-    # Recorrer cada carácter del mensaje
-    for i in text:
-        
-       # Comprobar si el carácter es un dígito
-       if i.isdigit():
-          # Si es así, pedir al usuario que introduzca el mensaje de nuevo y asignarlo a la variable text
-          text = input("you enter a incorrect data, please enter your message again: ")
-           
-       # Si no es un dígito, cambiar el valor de la variable verification_text a True
-       else:
-           verification_text=True
+
     
 
     

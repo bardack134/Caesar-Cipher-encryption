@@ -14,20 +14,26 @@ def encrypt(text, shift):
 
     # Crear una lista vacía para guardar el nuevo alfabeto desplazado
     new_alphabet_list=[]
-    shit= shift %26
+    
+    
     # Recorrer cada letra del alfabeto original desde la posición indicada por el 'shift' hasta el final
     for i in range(shift, len(alphabet)):
-        # Añadir cada letra a la lista del nuevo alfabeto
-        new_alphabet_list.append(alphabet[i])
         
-        # Comprobar si la letra es la última del alfabeto original
-        if i == alphabet.index("z"):
-            # Si es así, recorrer cada letra del alfabeto original desde el principio hasta la posición indicada por el 'shift'
-            for j in range(0, shift):
-                # Añadir cada letra a la lista del nuevo alfabeto
-                new_alphabet_list.append(alphabet[j])
-    
-  
+        #evaluamos si el caracter esta o no en nuestra lista alfabeto
+        if alphabet[i] in alphabet:
+            # Añadir cada letra a la lista del nuevo alfabeto
+            new_alphabet_list.append(alphabet[i])
+            
+            # Comprobar si la letra es la última del alfabeto original
+            if i == alphabet.index("z"):
+                # Si es así, recorrer cada letra del alfabeto original desde el principio hasta la posición indicada por el 'shift'
+                for j in range(0, shift):
+                    # Añadir cada letra a la lista del nuevo alfabeto
+                    new_alphabet_list.append(alphabet[j])
+        
+        else:
+            # Añadir cada letra a la lista del nuevo alfabeto
+            new_alphabet_list.append(i)
     
     # Crear una lista vacía para guardar el mensaje encriptado
     secret_code_list=[]
@@ -35,16 +41,18 @@ def encrypt(text, shift):
     # Recorrer cada letra del mensaje original
     for i in text:
         
-        # Obtener la posición de la letra en el alfabeto original y asignarla a una variable llamada position_letter
-        position_letter=alphabet.index(i)
-        
-        # Añadir la letra correspondiente del nuevo alfabeto a la lista del mensaje encriptado
-        secret_code_list.append(new_alphabet_list[position_letter])
-        
+        if i in alphabet:
+            # Obtener la posición de la letra en el alfabeto original y asignarla a una variable llamada position_letter
+            position_letter=alphabet.index(i)
+            
+            # Añadir la letra correspondiente del nuevo alfabeto a la lista del mensaje encriptado
+            secret_code_list.append(new_alphabet_list[position_letter])
+        else:
+            secret_code_list.append(i)
     # Convertir la lista del mensaje encriptado en una cadena y asignarla a una variable llamada secret_code_string
     secret_code_string="".join(secret_code_list)
     
     # Imprimir el mensaje encriptado
-    print(f"the encodded text is {secret_code_string}")
+    print(f"the encodded text is '{secret_code_string}'")
         # print(alphabet.index(i))
         
