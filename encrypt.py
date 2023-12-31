@@ -14,7 +14,7 @@ def encrypt(text, shift):
 
     # Crear una lista vacía para guardar el nuevo alfabeto desplazado
     new_alphabet_list=[]
-    
+    shit= shift %26
     # Recorrer cada letra del alfabeto original desde la posición indicada por el 'shift' hasta el final
     for i in range(shift, len(alphabet)):
         # Añadir cada letra a la lista del nuevo alfabeto

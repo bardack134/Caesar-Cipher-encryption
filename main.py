@@ -40,6 +40,9 @@ while verification_text==False:
 # Pedir al usuario que introduzca el número de posiciones que quiere desplazar las letras y asignar su respuesta a una variable llamada shift. Convertir la respuesta a un número entero.
 shift = int(input("Type the shift number:\n"))
 
+#modificamos el shift para que no importa el numero que el usuario introduzca nuestro codigo pueda correr y no muestre error "item out of Range" porque da un valor posicional de la lista mayor a la cantidad de items en nuestra lista 
+
+shift = shift % 27
 # Imprimir una línea vacía para separar
 print('')
 
