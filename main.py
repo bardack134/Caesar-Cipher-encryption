@@ -6,12 +6,15 @@ from decrypt import *
 
 from art import *
 
+from instructions import *
 #impormimos logo del codigo
 print(logo)
 
 should_continue = True
 
 while should_continue:
+    
+    print(initial_message)
     
     # Pedir al usuario que elija si quiere encriptar o desencriptar un mensaje y asignar su respuesta a una variable llamada direction
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
